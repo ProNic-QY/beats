@@ -71,6 +71,8 @@ func (p *pod) Generate(obj kubernetes.Resource, opts ...FieldOptions) common.Map
 			out.DeepUpdate(meta)
 		}
 	}
+
+	out.Put("pod.ip", po.Status.PodIP)
 	return out
 }
 
